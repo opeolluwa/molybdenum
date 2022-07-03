@@ -13,13 +13,13 @@ A codebase the can be refactored for use as a backend for a project.
 
 - [Authentication](#authentication)
 - [Authorization](#authorization)
-- [CRUD](#crud)
+- [CRUD](#crud) operations
 - [RESTful Architecture](#rest)
-- [ORM](#orm)
+- [ORM](#orm) using [typeorm](https://typeorm.io/)
 - [JWT](#jwt)
 - [Nodemailer](#nodemailer)
 - [MySQL](#mysql)
-- [File Server](#file-server)
+- [File Server](#file-server) with [imagekit](https://imagekit.io/)
 
 ## Usage
 
@@ -75,4 +75,4 @@ If you have any feedback or review, please reach out to me via at <a href="mailt
 **Hi, I'm Opeoluwa! 👋**
 
 A full stack developer and tech adventurer. I love to build community projects when I'm not trying out technologies I'm not familiar with.
-If you find This helpful, consider twittering me @opeolluwa.
+If you find This helpful, consider twittering me [@_opeolluwa](https://twitter.com/_opeolluwa)
