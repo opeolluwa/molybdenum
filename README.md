@@ -1,7 +1,5 @@
-# Backend Template
-
-A codebase the can be refactored for use as a backend for a project.
-
+# Molybdenum
+Minimal Authentication Server built on Node.js, Express.js, MySQL and Typescript. 
 ## Technologies used
 
 - [Node.js](https://nodejs.org/)
@@ -21,58 +19,17 @@ A codebase the can be refactored for use as a backend for a project.
 - [MySQL](#mysql)
 - [File Server](#file-server) with [imagekit](https://imagekit.io/)
 
-## Usage
+## Installation (development)
 
-- Clone the repository and run `yarn install` to install the dependencies.
-- Run `yarn start` to start the server.
-- Run `yarn test` to run the tests.
-- Run `yarn run build` to build the application for production.
+1. Clone the repository and run `yarn` to install the dependencies.
+2. Create a `.env` file in the root directory and populate it using the `.env.example` file.
+3. Run `yarn start` to start the server.
+4. Run `yarn test` to run the tests.
+5. Run `yarn run build` to build the application for production.
 
 ## Demo
 
-Tryout a live deployment [demo](example.com) of the application.
+Try out a live deployment [demo](example.com) of the application.
 
-## Run Locally
-
-Clone the project
-
-```bash
-  git clone https://github.com/opeolluwa/backend-template-ts <your-project-name>
-```
-
-Go to the project directory
-
-```bash
-  cd <your-project-name>
-```
-
-Install dependencies
-
-```bash
-  yarn install
-```
-
-Start the server
-
-```bash
-    yarn start
-```
-
-## Contributing
-
-Contributions are always welcome!
-
-See `contributing.md` for ways to get started.
-
-Please adhere to this project's `code of conduct`.
-
-## Feedback
-
-If you have any feedback or review, please reach out to me via at <a href="mailto:adeoyeadefemi@yahoo.com">adeoyeadefemi@yahoo.com</a>
-
-## 🚀 About Me
-
-**Hi, I'm Opeoluwa! 👋**
-
-A full stack developer and tech adventurer. I love to build community projects when I'm not trying out technologies I'm not familiar with.
-If you find This helpful, consider twittering me [@_opeolluwa](https://twitter.com/_opeolluwa)
+## Documentation
+Check out the [documentation]() for more information.

@@ -1,14 +1,15 @@
 {
-  "name": "edwork-api-2.0",
-  "version": "2.0.0",
-  "description": "Server Application for edwork version 2.0.0",
+  "name": "molybdenum",
+  "version": "1.0.0",
+  "description": "Minimal Authentication Server built on Node.js, Express.js, MySQL and Typescript. ",
   "scripts": {
     "start": "npx ts-node dist/index.js",
     "dev": "nodemon src/index.ts",
     "build": "tsc && npm run copy-static-assets",
     "test": "jest tests",
-    "copy-static-assets": "ts-node copy-static-assets.ts",
-    "deploy": "git push heroku master"
+    "lint": "eslint --ext .js,.ts . --fix",
+    "format": "prettier --ignore-path .gitignore --write \"**/*.+(js|ts|json)\"",
+    "copy-static-assets": "ts-node copy-static-assets.ts"
   },
   "dependencies": {
     "@faker-js/faker": "^7.3.0",
@@ -52,6 +53,7 @@
     "eslint-plugin-n": "^15.0.0",
     "eslint-plugin-promise": "^6.0.0",
     "jest": "^28.1.1",
+    "prettier": "^2.7.1",
     "supertest": "^6.2.3",
     "ts-jest": "^28.0.5",
     "ts-node": "^10.8.1",
@@ -59,12 +61,22 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/opeolluwa/hot-rollers"
+    "url": "https://github.com/opeolluwa/molybdenum.git"
   },
-  "keywords": [],
+  "keywords": [
+    "node",
+    "nodemailer",
+    "typescript",
+    "express",
+    "mysql",
+    "sequelize",
+    "typeorm",
+    "jest",
+    "eslint"
+  ],
   "license": "ISC",
   "bugs": {
-    "url": ""
+    "url": "https: //github.com/opeolluwa/molybdenum/issues"
   },
-  "homepage": "https://github.com/opeolluwa/hot-rollers"
+  "homepage": "https://github.com/opeolluwa/molybdenum.git"
 }

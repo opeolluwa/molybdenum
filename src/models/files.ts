@@ -11,40 +11,40 @@
  * - file_description: the description of the file
  * - file_tags: the tags of the file
  * - file_category: the category of the file
- * 
+ *
  */
-import { Entity, Column, PrimaryGeneratedColumn } from "typeorm";
+import { Entity, Column, PrimaryGeneratedColumn } from "typeorm"
 export class FileModel {
-    @PrimaryGeneratedColumn("uuid")
-    id: string | undefined;
+  @PrimaryGeneratedColumn("uuid")
+  id: string | undefined
 
-    @Column({ type: "varchar", nullable: false })
-    file_name: string | undefined;
+  @Column({ type: "varchar", nullable: false })
+  file_name: string | undefined
 
-    @Column({ type: "varchar", nullable: false })
-    file_path: string | undefined;
+  @Column({ type: "varchar", nullable: false })
+  file_path: string | undefined
 
-    @Column({ type: Date, nullable: false, default: () => "CURRENT_TIMESTAMP" })
-    date_added: Date | undefined;
+  @Column({ type: Date, nullable: false, default: () => "CURRENT_TIMESTAMP" })
+  date_added: Date | undefined
 
-    @Column({ type: "varchar", nullable: false })
-    user_id: string | undefined;
+  @Column({ type: "varchar", nullable: false })
+  user_id: string | undefined
 
-    @Column({ type: "varchar", nullable: false })
-    file_type: string | undefined;
+  @Column({ type: "varchar", nullable: false })
+  file_type: string | undefined
 
-    @Column({ type: "varchar", nullable: false })
-    file_size: string | undefined;
+  @Column({ type: "varchar", nullable: false })
+  file_size: string | undefined
 
-    @Column({ type: "varchar", nullable: false })
-    file_extension: string | undefined;
+  @Column({ type: "varchar", nullable: false })
+  file_extension: string | undefined
 
-    @Column({ type: "varchar", nullable: false })
-    file_description: string | undefined;
+  @Column({ type: "varchar", nullable: false })
+  file_description: string | undefined
 
-    @Column({ type: "varchar", nullable: false })
-    file_tags: string | undefined;
+  @Column({ type: "varchar", nullable: false })
+  file_tags: string | undefined
 
-    @Column({ type: "varchar", nullable: false })
-    file_category: string | undefined;
+  @Column({ type: "varchar", nullable: false })
+  file_category: string | undefined
 }
