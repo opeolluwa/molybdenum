@@ -144,3 +144,11 @@ dist
 
 # End of https://www.toptal.com/developers/gitignore/api/node
 uploads/*
+
+#ignore sandbox
+sandbox.ts
+sandbox/*
+
+.vscode
+#ignire the built version of the book in development
+docs/book

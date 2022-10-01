@@ -1,1 +1,0 @@
-yarn add express sequelize mysql2 
