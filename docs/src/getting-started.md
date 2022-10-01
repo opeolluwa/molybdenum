@@ -1,11 +1,18 @@
-# Molybdenum
-Minimal Authentication Server built on Node.js, Express.js, MySQL and Typescript. 
-## Technologies used
+## Getting Started
+Currently, the only way to get started with the project is to clone, fork or download the repository.
 
-- [Node.js](https://nodejs.org/)
-- [Express.js](https://expressjs.com/)
-- [TypeScript](https://www.typescriptlang.org/)
-- [MySQL](https://www.mysql.com/)
+
+## Requirements 
+
+The following are required to run the application in development or in production.
+
+- [Node.js](https://nodejs.org/) >= 16.0.0
+- [MySQL](https://www.mysql.com/) >= 8.0.0 or a preferred SQL server such as [PostgreSQL](https://www.postgresql.org/) or [SQLite](https://www.sqlite.org/index.html)  
+[TypeScript](https://www.typescriptlang.org/) >= 4.3.5 
+- [Yarn](https://yarnpkg.com/) >= 1.22.0 or a preferred Node package manager such as [npm](https://www.npmjs.com/) or [pnpm](https://pnpm.js.org/)
+- [Docker](https://www.docker.com/) >= 20.10.0 (optional)
+
+
 
 
 ## Installation (development)
