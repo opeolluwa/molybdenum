@@ -15,7 +15,7 @@ import { OtpGenerator } from "../lib/otp-generator"
 import { Jwt } from "../lib/jwt"
 
 export class AuthenticationControllers {
-  static async register(req: Request, res: Response) {
+  static async signUp(req: Request, res: Response) {
     const { email, password, firstname, lastname } = req.body
 
     //check if user already exists if not create a new user
@@ -40,11 +40,11 @@ export class AuthenticationControllers {
         template: "confirm-email",
         data: {
           firstname: user.firstname,
-          magicLink: `${process.env.FRONTEND_URL}/${process.env.API_VERSION}/auth/confirm-email/${token}`,
+          magicLink: `${process.env.FRONTEND_URL}/auth/confirm-email/${token}`,
         },
       })
       console.log(
-        `${process.env.APP_URL}/${process.env.API_VERSION}/auth/confirm-email/${token}`
+        `${process.env.APP_URL}/auth/confirm-email/${token}`
       )
       return res.send({
         success: true,
@@ -253,7 +253,7 @@ export class AuthenticationControllers {
         email: user.email,
         firstname: user.firstname,
         lastname: user.lastname,
-        profilePicture: user.profilePicture,
+        profilePicture: user.avatar,
       }
       return res.send({ success: true, message: "User profile", payload })
     } catch (error: any) {
@@ -266,7 +266,7 @@ export class AuthenticationControllers {
    * to logout a user,
    * invalidate the jwt sent to the user
    */
-  static async logout(req: Request, res: Response) {}
+  static async logout(req: Request, res: Response) { }
 
   //generate refresh token
   static async generateRefreshToken(req: Request, res: Response) {
@@ -287,7 +287,7 @@ export class AuthenticationControllers {
         email: user.email,
         firstname: user.firstname,
         lastname: user.lastname,
-        profilePicture: user.profilePicture,
+        profilePicture: user.avatar,
       }
       return res.send({ success: true, message: "User profile", payload })
     } catch (error: any) {

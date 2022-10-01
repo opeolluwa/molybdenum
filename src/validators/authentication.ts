@@ -31,11 +31,15 @@ export class AuthValidators {
         error.email = "Email is invalid"
       }
       if (password && !(password.length >= 8)) {
-        error.password = "please enter a longer password"
+        error.password = "please use a password, at least 8 characters long"
       }
       if (Object.keys(error).length > 0) {
         const errorMessage: string = generateErrorMessage(error)
-        return res.send(InvalidFormDataError(errorMessage))
+        return res.status(400).json({
+          success: false,
+          message: errorMessage,
+          data: null
+        })
       }
       next()
     } catch (error: any) {
