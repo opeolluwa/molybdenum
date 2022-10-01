@@ -1,5 +1,4 @@
 # Features
-
 Molybdenum ships with the following authentication and authorization features:
 
 - [x] User registration
