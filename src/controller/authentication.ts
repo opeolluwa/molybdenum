@@ -43,17 +43,20 @@ export class AuthenticationControllers {
           magicLink: `${process.env.FRONTEND_URL}/auth/confirm-email/${token}`,
         },
       })
-      console.log(
-        `${process.env.APP_URL}/auth/confirm-email/${token}`
-      )
+      console.log(`${process.env.APP_URL}/auth/confirm-email/${token}`)
       return res.send({
         success: true,
         message:
           "User created successfully, please confirm your email to proceed",
+        data: null,
       })
-    } catch (error: any) {
+    } catch (error) {
       console.log(error.message)
-      return res.send(ServerError())
+      return res.status(500).send({
+        success: false,
+        message: (error as Error).message,
+        data: null,
+      })
     }
   }
 
@@ -79,9 +82,13 @@ export class AuthenticationControllers {
       user.status = UserAccountStatus.VERIFIED
       await AppDataSource.manager.save(user)
       return res.send({ success: true, message: "Email verified successfully" })
-    } catch (error: any) {
+    } catch (error) {
       console.log(error.message)
-      return res.send(ServerError())
+      return res.status(500).send({
+        success: false,
+        message: (error as Error).message,
+        data: null,
+      })
     }
   }
 
@@ -124,7 +131,11 @@ export class AuthenticationControllers {
       return res.send({ success: true, message: "OTP sent to your email" })
     } catch (error: any) {
       console.log(error.message)
-      return res.send(ServerError())
+      return res.status(500).send({
+        success: false,
+        message: (error as Error).message,
+        data: null,
+      })
     }
   }
 
@@ -163,8 +174,13 @@ export class AuthenticationControllers {
         message: "OTP verified",
         bearerToken: payload,
       })
-    } catch (error: any) {
+    } catch (error) {
       console.log(error.message)
+      return res.status(500).send({
+        success: false,
+        message: (error as Error).message,
+        data: null,
+      })
     }
   }
 
@@ -190,7 +206,12 @@ export class AuthenticationControllers {
       return res.send({ success: true, message: "Password reset successfully" })
     } catch (error: any) {
       console.log(error.message)
-      return res.send(ServerError())
+      console.log(error.message)
+      return res.status(500).send({
+        success: false,
+        message: (error as Error).message,
+        data: null,
+      })
     }
   }
 
@@ -231,7 +252,12 @@ export class AuthenticationControllers {
       })
     } catch (error: any) {
       console.log(error.message)
-      return res.send(ServerError())
+      console.log(error.message)
+      return res.status(500).send({
+        success: false,
+        message: (error as Error).message,
+        data: null,
+      })
     }
   }
 
@@ -258,7 +284,12 @@ export class AuthenticationControllers {
       return res.send({ success: true, message: "User profile", payload })
     } catch (error: any) {
       console.log(error.message)
-      return res.send(ServerError())
+      console.log(error.message)
+      return res.status(500).send({
+        success: false,
+        message: (error as Error).message,
+        data: null,
+      })
     }
   }
 
@@ -266,7 +297,7 @@ export class AuthenticationControllers {
    * to logout a user,
    * invalidate the jwt sent to the user
    */
-  static async logout(req: Request, res: Response) { }
+  static async logout(req: Request, res: Response) {}
 
   //generate refresh token
   static async generateRefreshToken(req: Request, res: Response) {
@@ -292,7 +323,12 @@ export class AuthenticationControllers {
       return res.send({ success: true, message: "User profile", payload })
     } catch (error: any) {
       console.log(error.message)
-      return res.send(ServerError())
+      console.log(error.message)
+      return res.status(500).send({
+        success: false,
+        message: (error as Error).message,
+        data: null,
+      })
     }
   }
 }

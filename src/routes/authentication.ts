@@ -9,10 +9,7 @@ export default (app: Application) => {
     Validators.register,
     AuthenticationControllers.signUp
   )
-  app.get(
-    "/auth/confirm-email/:token",
-    AuthenticationControllers.confirmEmail
-  )
+  app.get("/auth/confirm-email/:token", AuthenticationControllers.confirmEmail)
   app.post(
     "/auth/forgotten-password",
     Validators.forgotPassword,

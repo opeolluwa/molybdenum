@@ -4,7 +4,7 @@ export enum UserAccountStatus {
   VERIFIED = "verified",
   ACTIVE = "active",
   SUSPENDED = "suspended",
-  DEACTIVATED = "deactivated"
+  DEACTIVATED = "deactivated",
 }
 
 @Entity("user_information")

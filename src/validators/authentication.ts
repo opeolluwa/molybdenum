@@ -38,7 +38,7 @@ export class AuthValidators {
         return res.status(400).json({
           success: false,
           message: errorMessage,
-          data: null
+          data: null,
         })
       }
       next()
