@@ -2,8 +2,8 @@ import app from "./app"
 import { AppDataSource } from "./config/database.config"
 const PORT = Number(process.env.PORT) || 8000
 
-//establish connection to database
 try {
+  //establish connection to database
   AppDataSource.initialize()
   console.log("Database Connection has been established successfully.")
 } catch (error) {

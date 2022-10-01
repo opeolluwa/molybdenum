@@ -40,10 +40,12 @@ export class AuthenticationControllers {
         template: "confirm-email",
         data: {
           firstname: user.firstname,
-          magicLink: `${process.env.FRONTEND_URL}/v2/auth/confirm-email/${token}`,
+          magicLink: `${process.env.FRONTEND_URL}/${process.env.API_VERSION}/auth/confirm-email/${token}`,
         },
       })
-      console.log(`${process.env.APP_URL}/v2/auth/confirm-email/${token}`)
+      console.log(
+        `${process.env.APP_URL}/${process.env.API_VERSION}/auth/confirm-email/${token}`
+      )
       return res.send({
         success: true,
         message:

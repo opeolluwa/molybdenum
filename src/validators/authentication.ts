@@ -9,7 +9,7 @@ import {
   ServerError,
 } from "../lib/error"
 import { generateErrorMessage } from "../lib/generate-error-message"
-import { FileValidators } from "./files"
+// import { FileValidators } from "./files"
 export class AuthValidators {
   static register(req: Request, res: Response, next: NextFunction) {
     const { email, password, firstname, lastname } = req.body

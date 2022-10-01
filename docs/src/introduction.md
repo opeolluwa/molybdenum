@@ -1,6 +1,5 @@
 # Molybdenum
-
-Minimal yet production ready Authentication Server built on Node.js, Express.js, MySQL and Typescript.
+Production ready Authentication Server boilerplate for Node.js/Typescript and SQL tool chain 
 
 The application is built with the following reasons in mind:
 1.  To provide a minimal authentication server that can be coupled with a frontend (or mobile) application to provide basic authentication and authorization.
