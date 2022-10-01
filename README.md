@@ -9,7 +9,7 @@ Minimal Authentication Server built on Node.js, Express.js, MySQL and Typescript
 
 
 ## Installation (development)
-[Molybdenum](https://opeolluwa.github.io/molybdenum/) is built with using [yarn](https://yarnpkg.com/) for package management. To use other Node package manager such as [npm](https://www.npmjs.com/) or [pnpm](https://pnpm.js.org/). 
+[Molybdenum](https://opeolluwa.github.io/molybdenum/) is built using [yarn](https://yarnpkg.com/) for package management. To use other Node package managers such as [npm](https://www.npmjs.com/) or [pnpm](https://pnpm.js.org/). 
 Delete the `yarn.lock` file and run `npm install` or `pnpm install` to install the dependencies. Also, use your preferred package manager in place of `yarn` to execute
  the following commands.
 
@@ -17,7 +17,7 @@ Delete the `yarn.lock` file and run `npm install` or `pnpm install` to install t
 2. Create a `.env` file in the root directory and populate it using the `.env.example` file.
 3. Run `yarn start` to start the server.
 4. Run `yarn test` to run the tests.
-5. Run `yarn run build` to build the application for production.
+5. Run `yarn run build` to build the production application.
 
 ## Demo
 

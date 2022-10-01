@@ -15,7 +15,7 @@ import { OtpGenerator } from "../lib/otp-generator"
 import { Jwt } from "../lib/jwt"
 
 export class AuthenticationControllers {
-  static async register(req: Request, res: Response) {
+  static async signUp(req: Request, res: Response) {
     const { email, password, firstname, lastname } = req.body
 
     //check if user already exists if not create a new user
@@ -40,18 +40,23 @@ export class AuthenticationControllers {
         template: "confirm-email",
         data: {
           firstname: user.firstname,
-          magicLink: `${process.env.FRONTEND_URL}/v2/auth/confirm-email/${token}`,
+          magicLink: `${process.env.FRONTEND_URL}/auth/confirm-email/${token}`,
         },
       })
-      console.log(`${process.env.APP_URL}/v2/auth/confirm-email/${token}`)
+      console.log(`${process.env.APP_URL}/auth/confirm-email/${token}`)
       return res.send({
         success: true,
         message:
           "User created successfully, please confirm your email to proceed",
+        data: null,
       })
-    } catch (error: any) {
+    } catch (error) {
       console.log(error.message)
-      return res.send(ServerError())
+      return res.status(500).send({
+        success: false,
+        message: (error as Error).message,
+        data: null,
+      })
     }
   }
 
@@ -77,9 +82,13 @@ export class AuthenticationControllers {
       user.status = UserAccountStatus.VERIFIED
       await AppDataSource.manager.save(user)
       return res.send({ success: true, message: "Email verified successfully" })
-    } catch (error: any) {
+    } catch (error) {
       console.log(error.message)
-      return res.send(ServerError())
+      return res.status(500).send({
+        success: false,
+        message: (error as Error).message,
+        data: null,
+      })
     }
   }
 
@@ -122,7 +131,11 @@ export class AuthenticationControllers {
       return res.send({ success: true, message: "OTP sent to your email" })
     } catch (error: any) {
       console.log(error.message)
-      return res.send(ServerError())
+      return res.status(500).send({
+        success: false,
+        message: (error as Error).message,
+        data: null,
+      })
     }
   }
 
@@ -161,8 +174,13 @@ export class AuthenticationControllers {
         message: "OTP verified",
         bearerToken: payload,
       })
-    } catch (error: any) {
+    } catch (error) {
       console.log(error.message)
+      return res.status(500).send({
+        success: false,
+        message: (error as Error).message,
+        data: null,
+      })
     }
   }
 
@@ -188,7 +206,12 @@ export class AuthenticationControllers {
       return res.send({ success: true, message: "Password reset successfully" })
     } catch (error: any) {
       console.log(error.message)
-      return res.send(ServerError())
+      console.log(error.message)
+      return res.status(500).send({
+        success: false,
+        message: (error as Error).message,
+        data: null,
+      })
     }
   }
 
@@ -229,7 +252,12 @@ export class AuthenticationControllers {
       })
     } catch (error: any) {
       console.log(error.message)
-      return res.send(ServerError())
+      console.log(error.message)
+      return res.status(500).send({
+        success: false,
+        message: (error as Error).message,
+        data: null,
+      })
     }
   }
 
@@ -251,12 +279,17 @@ export class AuthenticationControllers {
         email: user.email,
         firstname: user.firstname,
         lastname: user.lastname,
-        profilePicture: user.profilePicture,
+        profilePicture: user.avatar,
       }
       return res.send({ success: true, message: "User profile", payload })
     } catch (error: any) {
       console.log(error.message)
-      return res.send(ServerError())
+      console.log(error.message)
+      return res.status(500).send({
+        success: false,
+        message: (error as Error).message,
+        data: null,
+      })
     }
   }
 
@@ -285,12 +318,17 @@ export class AuthenticationControllers {
         email: user.email,
         firstname: user.firstname,
         lastname: user.lastname,
-        profilePicture: user.profilePicture,
+        profilePicture: user.avatar,
       }
       return res.send({ success: true, message: "User profile", payload })
     } catch (error: any) {
       console.log(error.message)
-      return res.send(ServerError())
+      console.log(error.message)
+      return res.status(500).send({
+        success: false,
+        message: (error as Error).message,
+        data: null,
+      })
     }
   }
 }

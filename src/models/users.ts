@@ -2,9 +2,12 @@ import { Entity, Column, PrimaryGeneratedColumn } from "typeorm"
 export enum UserAccountStatus {
   UNVERIFIED = "unverified",
   VERIFIED = "verified",
+  ACTIVE = "active",
+  SUSPENDED = "suspended",
+  DEACTIVATED = "deactivated",
 }
 
-@Entity("user_account")
+@Entity("user_information")
 export class UserModel {
   @PrimaryGeneratedColumn("uuid")
   id: string | undefined
@@ -28,8 +31,9 @@ export class UserModel {
   })
   status: string | undefined
 
+  //the user profile picture
   @Column({ type: "varchar" })
-  profilePicture: string | undefined
+  avatar: string | undefined
 
   @Column({ type: "varchar", default: "" })
   otpId!: string
